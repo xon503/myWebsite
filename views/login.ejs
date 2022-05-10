@@ -1,0 +1,102 @@
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="shortcut icon" href="favicon/LOGO.png" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/pswrd.css" />
+    <script src="js/login.js" defer></script>
+    <script src="js/server.js" defer></script>
+    <link rel="script" href="js/passport-config.js" />
+    <title>Login</title>
+</head>
+
+<body class="container full-height-grow">
+    <header class="main-header">
+        <a href="/" class="logo">
+            <img style="height: 40px; width: 40px;" src="images/LOGOsmall.png" alt="brand logo" />
+            <div class="logo-txt">Xon's Domain</div>
+        </a>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="JoinNow">Socials</a></li>
+                <li><a href="https://vpn.xons-domain.co.uk/admin/">VPN</a></li>
+                <li><a href="login.ejs">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h2>Login/Register Functions Page</h2>
+
+    <button
+        class="btn"
+        onclick="document.getElementById('id01').style.display='block'"
+        style="width: auto"
+    >
+        Login
+    </button>
+
+    <div id="id01" class="modal">
+        <form class="modal-content animate">
+            <div class="container-pswrd">
+                <form action="/login" method="POST">
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required />
+                    </div>
+                    <div>
+                        <label for="password">Password</label>
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            required
+                        />
+                    </div>
+                    <button class="btn" type="submit">Login</button>
+                </form>
+            </div>
+        </form>
+    </div>
+
+    <br />
+    <button
+        class="btn"
+        onclick="document.getElementById('id02').style.display='block'"
+        style="width: auto"
+    >
+        Register
+    </button>
+
+    <div id="id02" class="modal">
+        <form class="modal-content animate">
+            <div class="container-pswrd">
+                <form action="/register" method="POST">
+                    <div>
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required />
+                    </div>
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required />
+                    </div>
+                    <div>
+                        <label for="password">Password</label>
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            required
+                        />
+                    </div>
+                    <button class="btn" type="submit">Register</button>
+                </form>
+            </div>
+        </form>
+    </div>
+
+    <br />
+    <form class="full-height-grow" action="/logout?_method=DELETE" method="POST">
+        <button class="btn" type="submit">Log Out</button>
+    </form>
+</body>
